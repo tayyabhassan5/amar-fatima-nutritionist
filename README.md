@@ -47,7 +47,7 @@ Four things were filled in with sensible defaults because they weren't supplied.
 
 | What | Current value | Where to change it |
 |---|---|---|
-| **Clinic timings** | Mon–Thu 10–4, Fri 10–12:30 & 2:30–4, Sat 10–2, Sun closed | 4 places: the top bar, the `#timings` table, the footer, and the `openingHoursSpecification` block in the JSON-LD at the bottom of `index.html`. Also update `HOURS` in `assets/js/main.js` so the "Open now" pill stays honest. |
+| **Clinic timings** | Mon–Thu 1–4, Fri 10–12:30 & 2:30–4, Sat 10–2, Sun closed. **Mon–Thu confirmed by the client; Fri/Sat are still assumed.** | 5 places: the top bar, the `#timings` table and the contact card in `index.html`, the `openingHoursSpecification` block in its JSON-LD, and `HOURS` in `assets/js/main.js` so the "Open now" pill stays honest. The `#prefTime` slot list in the appointment form should match too. |
 | **Social links** | removed — only WhatsApp, call and directions are linked | When the Facebook / Instagram / YouTube profiles exist, add an `<a class="social">` in the `.socials` block of `#contact` and in the footer |
 | **Street address** | 89/G Ganj Shakar Colony, Main M.Pur Road, Sahiwal | The colony name was partly covered on the pamphlet. Google Maps labels the locality beside Royal Hospital Sahiwal as **Ganj Shakar Colony**, so that's what the site says — please confirm. 4 places in `index.html`: contact card, FAQ answer, footer, JSON-LD |
 | **Email address** | not shown anywhere | Add a `ccard` block in `#contact` if you want one listed |
