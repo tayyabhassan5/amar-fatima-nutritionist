@@ -1,5 +1,8 @@
 # Amar Fatima — Dietitian & Nutritionist (Sahiwal)
 
+**Live:** https://tayyabhassan5.github.io/amar-fatima-nutritionist/
+**Repo:** https://github.com/tayyabhassan5/amar-fatima-nutritionist
+
 A modern, fast, single-page website for Amar Fatima, consulting dietitian at Royal Hospital
 Sahiwal. Plain HTML, CSS and JavaScript — no build step, no frameworks, no dependencies.
 Open `index.html` in a browser and it works.
@@ -37,7 +40,7 @@ how it works · clinic timings · appointment form · FAQs · contact + map · f
 
 ---
 
-## ⚠️ Confirm these before the site goes live
+## ⚠️ The site is already live — confirm these
 
 Four things were filled in with sensible defaults because they weren't supplied. Search
 `index.html` for `EDIT ME` to find the first two.
@@ -89,18 +92,46 @@ When you have one:
 
 ---
 
-## Putting it online
+## Updating the live site
 
-The site is static, so hosting is free on all of these:
+It's hosted free on **GitHub Pages**, served from the `main` branch of
+[tayyabhassan5/amar-fatima-nutritionist](https://github.com/tayyabhassan5/amar-fatima-nutritionist).
+To publish a change, edit the files in this folder and then:
 
-- **Netlify** — go to [app.netlify.com/drop](https://app.netlify.com/drop) and drag the
-  `amar-fatima-nutritionist` folder onto the page. Live in about 20 seconds.
-- **Vercel** — `npx vercel` inside the folder.
-- **GitHub Pages** — push the folder to a repo, then Settings → Pages → deploy from `main`.
-- **Any cPanel host** — upload the folder's contents into `public_html`.
+```bash
+cd ~/Desktop/amar-fatima-nutritionist
+git add -A
+git commit -m "Update clinic timings"
+git push
+```
 
-After connecting a domain, update `<link rel="canonical">` and the `og:image` path in
-`index.html` and the URL in `sitemap.xml` to the real address.
+The live site refreshes about a minute later. If it looks unchanged, hard-refresh
+(⌘⇧R) — the browser caches the CSS.
+
+### Using a custom domain later
+
+If she buys a domain (e.g. `amarfatima.com`, roughly $10–15 a year from any registrar):
+
+1. In the repo: **Settings → Pages → Custom domain**, enter the domain, save. Tick
+   **Enforce HTTPS** once it appears — the certificate is free and automatic.
+2. At the registrar, add these DNS records:
+   - `A` records for the root domain → `185.199.108.153`, `185.199.109.153`,
+     `185.199.110.153`, `185.199.111.153`
+   - a `CNAME` for `www` → `tayyabhassan5.github.io`
+3. Then update the URL in four places: `<link rel="canonical">`, `og:url` and `og:image` in
+   `index.html`, the `<loc>` in `sitemap.xml`, and the `Sitemap:` line in `robots.txt`.
+
+### Getting found on Google
+
+The single highest-impact step isn't on this site: add this URL to her **Google Business
+Profile** (she already has a Google listing). After that, add the site to
+[Google Search Console](https://search.google.com/search-console) and submit `sitemap.xml`.
+
+### Other hosts
+
+Nothing ties the site to GitHub — it's plain files. It will run just as well on Netlify
+(drag the folder onto [app.netlify.com/drop](https://app.netlify.com/drop)), Vercel
+(`npx vercel`), or any cPanel host (upload the contents into `public_html`).
 
 ---
 
